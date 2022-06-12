@@ -281,10 +281,8 @@ Resources:
                     apt-get install apache2 -y
                     systemctl start apache2.service
                     cd /var/www/html
-                    aws s3 cp s3://udacity-demo-1/udacity.zip .
-                    unzip -o udacity.zip
+                    echo "Udagram Web Server Up and Running" > index.html
             ImageId: ami-005de95e8ff495156
-            KeyName: project2-udacity-keypair
             IamInstanceProfile: !Ref ProfileWithRolesForOurApp
             SecurityGroups:
             -   Ref: WebServerSecGroup
